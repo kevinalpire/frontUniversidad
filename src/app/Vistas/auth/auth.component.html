@@ -1,0 +1,65 @@
+<!-- <body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Bienvenido</h2>
+      <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+        <div class="form-group">
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="Usuario"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <button type="submit" [disabled]="formularioLogin.invalid">
+          Login
+        </button>
+        <div class="links"></div>
+      </form>
+    </div>
+  </div>
+</body> -->
+
+<body>
+  <div class="wrapper">
+    <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+      <h2>Bienvenido de vuelta</h2>
+      <div class="input-field">
+        <input
+        type="text"
+        formControlName="username"
+        placeholder="Usuario"
+        required
+      />
+        <label>Ingrese su email</label>
+      </div>
+      <div class="input-field">
+        <input
+        type="password"
+        formControlName="password"
+        placeholder="Contraseña"
+        required
+      />
+        <label>Ingrese su contraseña</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember" />
+          <p>Recordarme</p>
+        </label>
+        <a href="#">Olvidó su contraseña?</a>
+      </div>
+      <button type="submit" [disabled]="formularioLogin.invalid">
+        Iniciar sesión
+      </button>
+    </form>
+  </div>
+</body>

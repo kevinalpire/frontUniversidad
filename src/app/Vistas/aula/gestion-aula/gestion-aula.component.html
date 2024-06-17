@@ -1,0 +1,87 @@
+<!-- <app-layout></app-layout>
+
+<body>
+  <div class="form-container mat-elevation-z2">
+    <h2>Aulas</h2>
+    <form [formGroup]="formAula">
+      <div class="flex">
+        <mat-form-field appearance="outline">
+          <mat-label>Módulo</mat-label>
+          <input matInput type="number" formControlName="modulo" />
+        </mat-form-field>
+      </div>
+
+      <div class="flex">
+        <mat-form-field appearance="outline">
+          <mat-label>Piso</mat-label>
+          <input matInput type="text" formControlName="piso" />
+        </mat-form-field>
+      </div>
+
+      <div class="flex">
+        <mat-form-field appearance="outline">
+          <mat-label>Número</mat-label>
+          <input matInput formControlName="numero" />
+        </mat-form-field>
+      </div>
+
+      <div class="button-group">
+        <button mat-flat-button (click)="guardar()">Guardar</button>
+        <button mat-flat-button (click)="volver()">Volver</button>
+      </div>
+    </form>
+  </div>
+</body>
+ -->
+
+<div class="content">
+  <app-layout></app-layout>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <article class="part card-details">
+          <h1>Aulas</h1>
+          <form [formGroup]="formAula" autocomplete="off">
+            <div class="group-flex">
+              <div class="group card-name">
+                <label for="name">Módulo</label>
+                <input
+                  placeholder="Nombre"
+                  matInput
+                  type="number"
+                  formControlName="modulo"
+                />
+              </div>
+              <div class="group card-name">
+                <label for="name">Piso</label>
+                <input
+                  placeholder="piso"
+                  matInput
+                  type="text"
+                  formControlName="piso"
+                />
+              </div>
+            </div>
+
+            <div class="group-flex">
+              <div class="group card-name">
+                <label for="name">Número</label>
+                <input placeholder="codigo" matInput formControlName="numero" />
+              </div>
+              <div class="group card-name"></div>
+            </div>
+
+            <div class="grup submit-group">
+              <button type="submit" class="submit" (click)="guardar()">
+                Guardar
+              </button>
+              <button type="submit" class="submit" (click)="volver()">
+                Volver
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </body>
+</div>

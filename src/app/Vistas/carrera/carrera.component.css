@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #3b183a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.fullWidth {
+  width: 100%;
+  padding: 30px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #8da5e6;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.add-button:hover {
+  background-color: #37539e;
+}
+
+table {
+  border-radius: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead {
+  background-color: #1d4e75;
+  color: white;
+}
+
+thead th {
+  padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+.modify-button,
+.delete-button {
+  background-color: #8da5e6;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modify-button:hover,
+.delete-button:hover {
+  background-color: #37539e;
+}
+
+.delete-button {
+  margin-left: 5px;
+}

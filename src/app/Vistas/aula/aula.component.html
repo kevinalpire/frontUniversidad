@@ -1,0 +1,48 @@
+<div class="container">
+  <app-layout></app-layout>
+
+  <div class="fullWidth">
+    <h2>Gestión de Docentes</h2>
+    <button mat-flat-button class="add-button" (click)="nuevo()">
+      Nueva Aula
+    </button>
+
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8">
+      <!-- Código Column -->
+      <ng-container matColumnDef="modulo">
+        <th mat-header-cell *matHeaderCellDef>Módulo</th>
+        <td mat-cell *matCellDef="let element">{{ element.modulo }}</td>
+      </ng-container>
+
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="piso">
+        <th mat-header-cell *matHeaderCellDef>Piso</th>
+        <td mat-cell *matCellDef="let element">{{ element.piso }}</td>
+      </ng-container>
+
+      <!-- Profesión Column -->
+      <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef>Número</th>
+        <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+      </ng-container>
+
+      <!-- Acción Column -->
+      <ng-container matColumnDef="Accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="editar(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td></ng-container
+      >
+
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Data Row -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

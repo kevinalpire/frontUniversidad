@@ -1,0 +1,102 @@
+<!-- <app-layout></app-layout>
+ 
+<body>
+      
+    <div class="form-container mat-elevation-z2">
+    <h2>Gestions</h2>
+    <form [formGroup]="formGestion">
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>
+        </div>
+       
+        <div class="flex">
+            <mat-form-field appearance="outline">
+                <mat-label>Año</mat-label>
+                <input matInput formControlName="year">
+            </mat-form-field>
+            </div>
+
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo de gestión</mat-label>
+            <mat-select formControlName="tipoG">
+                <mat-option *ngFor="let tipo of tipoGestiones" [value]="tipo.id">{{ tipo.nombre }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div class="button-group">
+        <button mat-flat-button (click)="guardar()">Guardar</button>
+        <button mat-flat-button (click)="volver()">Volver</button>
+        </div>
+    </form>
+    </div>
+</body> -->
+
+<div class="content">
+  <app-layout></app-layout>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <article class="part card-details">
+          <h1>Gestions</h1>
+          <form [formGroup]="formGestion" autocomplete="off">
+            <div class="group-flex">
+              <div class="group card-name">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  placeholder="Nombre"
+                  matInput
+                  formControlName="nombre"
+                />
+              </div>
+              <div class="group card-name">
+                <label for="name">Año</label>
+                <input
+                  type="text"
+                  placeholder="año"
+                  matInput
+                  formControlName="ano"
+                />
+              </div>
+            </div>
+
+            <div class="flex">
+              <mat-form-field appearance="outline">
+                <mat-label style="color: black; font-size: 15px"
+                  >Tipo de gestión</mat-label
+                >
+                <mat-select
+                  style="border-bottom: 1px solid #d9d9d9; color: black"
+                  value=""
+                  formControlName="tipoG"
+                >
+                  <mat-option
+                    style="color: black; background-color: white"
+                    *ngFor="let tipo of tipoGestiones"
+                    [value]="tipo.id"
+                    
+                    >{{ tipo.nombre }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="grup submit-group">
+              <button type="submit" class="submit" (click)="guardar()">
+                Guardar
+              </button>
+              <button type="submit" class="submit" (click)="volver()">
+                Volver
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </body>
+</div>

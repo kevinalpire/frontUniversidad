@@ -1,0 +1,63 @@
+<div class="container">
+  <app-layout></app-layout>
+
+  <div class="fullWidth">
+    <h2>Asignación de materias</h2>
+    <button mat-flat-button class="add-button" (click)="nuevo()">
+      Nueva Asignación
+    </button>
+
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8">
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="materia">
+        <th mat-header-cell *matHeaderCellDef>Materia</th>
+        <td mat-cell *matCellDef="let element">{{ element.materia.nombre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="sigla">
+        <th mat-header-cell *matHeaderCellDef>Sigla</th>
+        <td mat-cell *matCellDef="let element">{{ element.materia.sigla }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="grupo">
+        <th mat-header-cell *matHeaderCellDef>Grupo</th>
+        <td mat-cell *matCellDef="let element">{{ element.grupo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="aula">
+        <th mat-header-cell *matHeaderCellDef>Aula</th>
+        <td mat-cell *matCellDef="let element">{{ element.aula.numero }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="docente">
+        <th mat-header-cell *matHeaderCellDef>Docente</th>
+        <td mat-cell *matCellDef="let element">{{ element.docente.nombre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="carrera">
+        <th mat-header-cell *matHeaderCellDef>Carrera</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.materia.carrera.nombre }}
+        </td>
+      </ng-container>
+
+      <!-- Acción Column -->
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="editar(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td></ng-container
+      >
+
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Data Row -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

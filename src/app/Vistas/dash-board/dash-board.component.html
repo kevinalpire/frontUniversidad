@@ -1,0 +1,49 @@
+<div class="container">
+    <app-layout></app-layout>
+  
+    <div class="fullWidth">
+      <h2>Reporte de asistencias</h2>
+      <button mat-flat-button class="add-button" (click)="exportExcelPdf()">Exportar a PDF</button>
+      <button mat-flat-button class="add-button" (click)="exportexcel()">Exportar a Excel</button>
+  
+      <table mat-table [dataSource]="datos" class="mat-elevation-z8">
+        <!-- Nombre Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
+        </ng-container>
+  
+        <!-- Profesión Column -->
+        <ng-container matColumnDef="hora">
+          <th mat-header-cell *matHeaderCellDef>Hora de ingreso</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.hora}}
+          </td>
+        </ng-container>
+  
+        <!-- Profesión Column -->
+        <ng-container matColumnDef="docente">
+            <th mat-header-cell *matHeaderCellDef>Docente</th>
+            <td mat-cell *matCellDef="let element">{{element.materia_gestion.docente.nombre}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef>Materia</th>
+            <td mat-cell *matCellDef="let element">{{element.materia_gestion.materia.nombre}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="carrera">
+            <th mat-header-cell *matHeaderCellDef>Carrera</th>
+            <td mat-cell *matCellDef="let element">{{ element.materia_gestion.materia.carrera.nombre}}</td>
+          </ng-container>
+  
+    
+      
+    <!-- Fila de encabezado -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Fila de datos -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  

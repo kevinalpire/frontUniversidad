@@ -1,0 +1,174 @@
+<!-- <app-layout></app-layout>
+ 
+<body>
+      
+    <div class="form-container mat-elevation-z2">
+    <h2>Carreras</h2>
+    <form [formGroup]="formMateriaGestion">
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Grupo</mat-label>
+            <input matInput formControlName="grupo">
+        </mat-form-field>
+        </div>
+       
+
+
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Materia</mat-label>
+            <mat-select formControlName="id_materia">
+                <mat-option *ngFor="let materia of materias" [value]="materia.id">{{ materia.nombre }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field appearance="outline">
+                <mat-label>Gestion</mat-label>
+                <mat-select formControlName="id_gestion">
+                    <mat-option *ngFor="let gestion of gestions" [value]="gestion.id">{{ gestion.nombre }}</mat-option>
+                  </mat-select>
+            </mat-form-field>
+        </div>
+
+        
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Aula</mat-label>
+            <mat-select formControlName="id_aula">
+                <mat-option *ngFor="let aula of aulas " [value]="aula.id">{{ aula.numero }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Docente</mat-label>
+            <mat-select formControlName="id_docente">
+                <mat-option *ngFor="let docente of docentes " [value]="docente.id">{{ docente.nombre }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div class="button-group">
+        <button mat-flat-button (click)="guardar()">Guardar</button>
+        <button mat-flat-button (click)="volver()">Volver</button>
+        </div>
+    </form>
+    </div>
+</body> -->
+<div class="content">
+  <app-layout></app-layout>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <article class="part card-details">
+          <h1>Materia Gestion</h1>
+          <form [formGroup]="formMateriaGestion" autocomplete="off">
+            <div class="group-flex">
+              <div class="group card-name">
+                <label for="name">Grupo</label>
+                <input
+                  type="text"
+                  placeholder="grupo"
+                  matInput
+                  formControlName="grupo"
+                />
+              </div>
+            </div>
+
+            <div class="group-flex">
+              <mat-form-field appearance="outline">
+                <mat-label style="color: black; font-size: 15px"
+                  >Materia</mat-label
+                >
+                <mat-select
+                  style="border-bottom: 1px solid #d9d9d9; color: black"
+                  formControlName="id_materia"
+                >
+                  <mat-option
+                    style="color: black; background-color: white"
+                    [value]="0"
+                    *ngFor="let materia of materias"
+                    [value]="materia.id"
+                    >{{ materia.nombre }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label style="color: black; font-size: 15px"
+                  >Gestion</mat-label
+                >
+                <mat-select
+                  style="border-bottom: 1px solid #d9d9d9; color: black"
+                  formControlName="id_gestion"
+                >
+                  <mat-option
+                    style="color: black; background-color: white"
+                    *ngFor="let gestion of gestions"
+                    [value]="gestion.id"
+                    >{{ gestion.nombre }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="group-flex">
+              <mat-form-field appearance="outline">
+                <mat-label style="color: black; font-size: 15px"
+                  >Aula</mat-label
+                >
+                <mat-select
+                  style="border-bottom: 1px solid #d9d9d9; color: black"
+                  formControlName="id_aula"
+                >
+                  <mat-option
+                    style="color: black; background-color: white"
+                    [value]="0"
+                    *ngFor="let aula of aulas"
+                    [value]="aula.id"
+                    >{{ aula.numero }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label style="color: black; font-size: 15px"
+                  >Docente</mat-label
+                >
+                <mat-select
+                  style="border-bottom: 1px solid #d9d9d9; color: black"
+                  formControlName="id_docente"
+                >
+                  <mat-option
+                    style="color: black; background-color: white"
+                    *ngFor="let docente of docentes"
+                    [value]="docente.id"
+                    >{{ docente.nombre }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+                        <!-- Horario Field -->
+            <mat-form-field appearance="outline">
+              <mat-label>Hora</mat-label>
+              <input matInput [ngxTimepicker]="picker" formControlName="horario" placeholder="">
+              <ngx-material-timepicker-toggle matSuffix [for]="picker"></ngx-material-timepicker-toggle>
+              <ngx-material-timepicker #picker ></ngx-material-timepicker>
+            </mat-form-field>
+
+            <div class="grup submit-group">
+              <button type="submit" class="submit" (click)="guardar()">
+                Guardar
+              </button>
+              <button type="submit" class="submit" (click)="volver()">
+                Volver
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </body>
+</div>
